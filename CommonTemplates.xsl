@@ -2731,6 +2731,57 @@
       <br/>
     </xsl:if>
   </xsl:template>
+  <xsl:template match="cac:CommodityClassification">
+    <xsl:if test="cbc:CommodityCode !=''">
+      <b>
+        <xsl:call-template name="LabelName">
+          <xsl:with-param name="BT-ID" select="'BT-158'"/>
+          <xsl:with-param name="Colon-Suffix" select="'true'"/>
+        </xsl:call-template>
+      </b>
+      <xsl:apply-templates select="cbc:CommodityCode"/>
+      <xsl:choose>
+        <xsl:when test="cbc:CommodityCode/@listID !=''">
+          <small>&#160;[<xsl:call-template name="UBLClassificationCode">
+              <xsl:with-param name="Code" select="cbc:CommodityCode/@listID"/>
+            </xsl:call-template>]</small>
+        </xsl:when>
+        <xsl:otherwise>
+          <small>&#160;[No listID]</small>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:if test="cbc:CommodityCode/@listVersionID !=''">
+				 [<xsl:apply-templates select="cbc:CommodityCode/@listeVersionID"/>]
+			</xsl:if>
+      <br/>
+    </xsl:if>
+    <xsl:if test="cbc:ItemClassificationCode !=''">
+      <b>
+        <xsl:call-template name="LabelName">
+          <xsl:with-param name="BT-ID" select="'BT-158'"/>
+          <xsl:with-param name="Colon-Suffix" select="'true'"/>
+        </xsl:call-template>
+      </b>
+      <xsl:apply-templates select="cbc:ItemClassificationCode"/>
+      <xsl:choose>
+        <xsl:when test="cbc:ItemClassificationCode/@listID !=''">
+          <small>&#160;[<xsl:call-template name="UBLClassificationCode">
+              <xsl:with-param name="Code" select="cbc:ItemClassificationCode/@listID"/>
+            </xsl:call-template>]</small>
+        </xsl:when>
+        <xsl:otherwise>
+          <small>&#160;[No listID]</small>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:if test="cbc:ItemClassificationCode/@listVersionID !=''">
+				 [ver.&#160;<xsl:apply-templates select="cbc:ItemClassificationCode/@listVersionID"/>]
+			</xsl:if>
+			   <xsl:if test="cbc:ItemClassificationCode/@name !=''">
+				 [Name: &#160;<xsl:apply-templates select="cbc:ItemClassificationCode/@name"/>]
+			</xsl:if>
+      <br/>
+    </xsl:if>
+  </xsl:template>
   <xsl:template match="cac:ItemInstance">
     <b>
       <xsl:call-template name="LabelName">
@@ -3099,7 +3150,16 @@
         <xsl:apply-templates select="cbc:AllowanceChargeReasonCode"/>
       </td>
       <td valign="top" colspan="2">
-        <xsl:apply-templates select="cbc:AllowanceChargeReason"/>
+        <xsl:choose>
+          <xsl:when test="cbc:AllowanceChargeReason != ''">
+            <xsl:apply-templates select="cbc:AllowanceChargeReason"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="AllowanceReasonCode">
+              <xsl:with-param name="AllowanceCode" select="cbc:AllowanceChargeReasonCode"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
       </td>
       <td>
         <xsl:if test="cac:TaxCategory !='' ">
@@ -3136,7 +3196,16 @@
         <xsl:apply-templates select="cbc:AllowanceChargeReasonCode"/>
       </td>
       <td valign="top" colspan="2">
-        <xsl:apply-templates select="cbc:AllowanceChargeReason"/>
+        <xsl:choose>
+          <xsl:when test="cbc:AllowanceChargeReason != ''">
+            <xsl:apply-templates select="cbc:AllowanceChargeReason"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="ChargeReasonCode">
+              <xsl:with-param name="ChargeCode" select="cbc:AllowanceChargeReasonCode"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
       </td>
       <td>
         <xsl:if test="cac:TaxCategory !='' ">
