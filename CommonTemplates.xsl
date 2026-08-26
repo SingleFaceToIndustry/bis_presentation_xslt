@@ -1174,7 +1174,7 @@
   <!--Delivery templates start: -->
   <xsl:template match="cac:Delivery" mode="DocumentHeader">
     <p>
-      <xsl:if test="cac:DeliveryLocation">
+      <xsl:if test="cac:DeliveryLocation or cac:DeliveryParty/cac:PartyName/cbc:Name">
         <b>
           <xsl:call-template name="LabelName">
             <xsl:with-param name="BT-ID" select="'BG-13'"/>
