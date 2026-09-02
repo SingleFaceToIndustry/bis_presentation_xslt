@@ -558,7 +558,7 @@
 				<SimpleValue>AEM</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Clerical or administrative services</SimpleValue>
+				<SimpleValue>Administration</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -981,7 +981,7 @@
 				<SimpleValue>FC</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Freight service</SimpleValue>
+				<SimpleValue>Frakt</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
