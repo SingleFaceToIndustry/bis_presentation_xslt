@@ -60,17 +60,8 @@
 	<BusinessTerm id="BT-20">
 		<TermName>Betalningsvillkor</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-1">
-		<TermName>FAKTURANOT</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-21">
-		<TermName>Kod för anteckningens ämne</TermName>
-	</BusinessTerm>
 	<BusinessTerm id="BT-22">
 		<TermName>Anteckning</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BG-2">
-		<TermName>PROCESSTYRNING</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-23">
 		<TermName>Business process type</TermName>
@@ -132,27 +123,6 @@
 		<TermName>SÄLJARENS ADRESS</TermName>
 		<DisplayName>Adress</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-35">
-		<TermName>Säljarens adressrad 1</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-36">
-		<TermName>Säljarens adressrad 2</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-162">
-		<TermName>Säljarens adressrad 3</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-37">
-		<TermName>Säljarens ort</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-38">
-		<TermName>Säljarens postnummer</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-39">
-		<TermName>Säljarens region</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-40">
-		<TermName>Säljarens landskod</TermName>
-	</BusinessTerm>
 	<BusinessTerm id="BG-6">
 		<TermName>SÄLJARENS KONTAKT</TermName>
 	</BusinessTerm>
@@ -207,27 +177,6 @@
 		<TermName>KÖPARENS ADRESS</TermName>
 		<DisplayName>Adress</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-50">
-		<TermName>Köparens adressrad 1</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-51">
-		<TermName>Köparens adressrad 2</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-163">
-		<TermName>Köparens adressrad 3</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-52">
-		<TermName>Köparens ort</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-53">
-		<TermName>Köparens postnummer</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-54">
-		<TermName>Köparens region</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-55">
-		<TermName>Köparens landskod</TermName>
-	</BusinessTerm>
 	<BusinessTerm id="BG-9">
 		<TermName>KÖPARENS KONTAKT</TermName>
 	</BusinessTerm>
@@ -238,9 +187,6 @@
 	<BusinessTerm id="BT-57">
 		<TermName>Köparens telefonnummer</TermName>
 		<DisplayName>Telefon</DisplayName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-58">
-		<TermName>Köparens kontakt, e-postadress</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-10">
 		<TermName>BETALNINGSMOTTAGARE</TermName>
@@ -276,27 +222,6 @@
 	<BusinessTerm id="BG-12">
 		<TermName>SKATTEOMBUD ADRESS</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-64">
-		<TermName>Skatteombudets adressrad 1</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-65">
-		<TermName>Skatteombudets adressrad 2</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-164">
-		<TermName>Skatteombudets adressrad 3</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-66">
-		<TermName>Skatteombudets ort</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-67">
-		<TermName>Skatteombudets postnummer</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-68">
-		<TermName>Skatteombudets region</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-69">
-		<TermName>Skatteombudets landskod</TermName>
-	</BusinessTerm>
 	<BusinessTerm id="BG-13">
 		<TermName>LEVERANSINFORMATION</TermName>
 	</BusinessTerm>
@@ -325,27 +250,6 @@
 	<BusinessTerm id="BG-15">
 		<TermName>LEVERANSPLATS</TermName>
 		<DisplayName>Adress</DisplayName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-75">
-		<TermName>Leveransadress, adressrad 1</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-76">
-		<TermName>Leveransadress, adressrad 2</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-165">
-		<TermName>Leveransadress, adressrad 3</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-77">
-		<TermName>Leveransadress, ort</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-78">
-		<TermName>Leveransadress, postnummer</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-79">
-		<TermName>Leveransadress, region</TermName>
-	</BusinessTerm>
-	<BusinessTerm id="BT-80">
-		<TermName>Leveransadress, landskod</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-16">
 		<TermName>BETALINSTRUKTION</TermName>
@@ -1669,7 +1573,7 @@
 <BusinessTerm id="tir19-063">
     <TermName>Landskod</TermName>
 </BusinessTerm>
-<BusinessTerm id="tir19-113">
+<BusinessTerm id="tir19-s113">
     <TermName>Landskod</TermName>
 </BusinessTerm>
 <BusinessTerm id="tir19-051">
@@ -1849,7 +1753,7 @@
 		<BusinessTerm id="tir19-additionalitempropertyid">
 		<TermName>Egenskap/Attribut ID</TermName>
 	</BusinessTerm>
-		<BusinessTerm id="tir19-certificatetypecode">
+		<BusinessTerm id="	tir19-certificatetypecode">
 		<TermName>Certifikatets typkod</TermName>
 	</BusinessTerm>
 

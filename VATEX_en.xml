@@ -175,6 +175,14 @@
 		</Row>
 		<Row>
 			<Value ColumnRef="code">
+				<SimpleValue>VATEX-EU-135-1</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Exempt based on article 135, section 1 of Council Directive 2006/112/EC</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
 				<SimpleValue>VATEX-EU-143</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
@@ -435,7 +443,7 @@
 				<SimpleValue>VATEX-EU-309</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Exempt based on article 309 of Council Directive 2006/112/EC</SimpleValue>
+				<SimpleValue>Travel agents performed outside of EU</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -651,7 +659,7 @@
 				<SimpleValue>VATEX-FR-CGI261D-3</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Exempt based on 3° of article 261 D of the Code Général des Impôts (CGI ; General tax code) Exonération de TVA - Article 261 D-3° du Code Général des Impôts</SimpleValue>
+				<SimpleValue>Exempt based on 3° of article 261 D of the Code Général des Impôts (CGI ; General tax code)</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -716,14 +724,6 @@
 			</Value>
 			<Value ColumnRef="name">
 				<SimpleValue>Exempt based on 2 of article 283 of the Code Général des Impôts (CGI ; General tax code)</SimpleValue>
-			</Value>
-		</Row>
-		<Row>
-			<Value ColumnRef="code">
-				<SimpleValue>VATEX-EU-135-1</SimpleValue>
-			</Value>
-			<Value ColumnRef="name">
-				<SimpleValue>Exempt based on article 135, section 1 of Council Directive 2006/112/EC</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>

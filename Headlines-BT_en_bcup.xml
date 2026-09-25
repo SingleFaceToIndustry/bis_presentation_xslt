@@ -1730,7 +1730,7 @@ If remittance information is to be mapped to the End To End Identification field
 	<BusinessTerm id="tir01-RequestedDespatchPeriod">
 		<TermName>Requested despatch period</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="tir01-p053">
+	<BusinessTerm id="tir01-tir01-p053">
 		<TermName>Requested despatch date</TermName>	
 	</BusinessTerm>
 	<BusinessTerm id="tir01-p054">
@@ -2302,7 +2302,7 @@ If remittance information is to be mapped to the End To End Identification field
 	<BusinessTerm id="tir19-additionalitempropertyid">
 		<TermName>Additional Item Property ID</TermName>
 	</BusinessTerm>
-		<BusinessTerm id="tir19-certificatetypecode">
+		<BusinessTerm id="	tir19-certificatetypecode">
 		<TermName>Certificate Type Code</TermName>
 	</BusinessTerm>
 
