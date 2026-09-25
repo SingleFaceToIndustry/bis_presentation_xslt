@@ -3767,28 +3767,28 @@
       <td align="left">
         <xsl:if test="cbc:InvoicedQuantity !=''">
           <xsl:apply-templates select="cbc:InvoicedQuantity"/>&#160;<xsl:if test="cbc:InvoicedQuantity/@unitCode !=''">
-            <xsl:value-of select="cbc:InvoicedQuantity/@unitCode"/>
-            <br/>
+              <xsl:call-template name="UNECECode">
+                <xsl:with-param name="Code" select="cbc:InvoicedQuantity/@unitCode"/>
+              </xsl:call-template>
+			<br/>
             <small>(<xsl:call-template name="LabelName">
                 <xsl:with-param name="BT-ID" select="'BT-130'"/>
                 <xsl:with-param name="Colon-Suffix" select="'true'"/>
               </xsl:call-template>
-              <xsl:call-template name="UNECECode">
-                <xsl:with-param name="Code" select="cbc:InvoicedQuantity/@unitCode"/>
-              </xsl:call-template>)</small>
+			  <xsl:value-of select="cbc:InvoicedQuantity/@unitCode"/>)</small>
           </xsl:if>
         </xsl:if>
         <xsl:if test="cbc:CreditedQuantity !=''">
           <xsl:apply-templates select="cbc:CreditedQuantity"/>&#160;<xsl:if test="cbc:CreditedQuantity/@unitCode !=''">
-            <xsl:value-of select="cbc:CreditedQuantity/@unitCode"/>
+			 <xsl:call-template name="UNECECode">
+                <xsl:with-param name="Code" select="cbc:CreditedQuantity/@unitCode"/>
+              </xsl:call-template>
             <br/>
             <small>(<xsl:call-template name="LabelName">
                 <xsl:with-param name="BT-ID" select="'BT-130'"/>
                 <xsl:with-param name="Colon-Suffix" select="'true'"/>
               </xsl:call-template>
-              <xsl:call-template name="UNECECode">
-                <xsl:with-param name="Code" select="cbc:CreditedQuantity/@unitCode"/>
-              </xsl:call-template>)</small>
+              <xsl:value-of select="cbc:CreditedQuantity/@unitCode"/>)</small>
           </xsl:if>
         </xsl:if>
       </td>
