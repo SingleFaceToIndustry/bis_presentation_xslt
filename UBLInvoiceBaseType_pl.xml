@@ -37,7 +37,7 @@
 				<Description xml:lang="en"/>
 			</Annotation>
 			<Value ColumnRef="code">
-				<SimpleValue>NOTA KREDYTOWA</SimpleValue>
+				<SimpleValue>CreditNote</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
 				<SimpleValue>NOTA KREDYTOWA</SimpleValue>

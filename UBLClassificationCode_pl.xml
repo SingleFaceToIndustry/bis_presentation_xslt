@@ -30,7 +30,28 @@
 			</Value>
 			<Value ColumnRef="name">
 				<SimpleValue>Kod towaru przemysłowego</SimpleValue>
-			UWAGA: Industry?
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Numer wersji produktu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Kod grupy towarowej</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -60,13 +81,45 @@
 				<Description xml:lang="en"/>
 			</Annotation>
 			<Value ColumnRef="code">
+				<SimpleValue>MN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Numer modelu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
 				<SimpleValue>HS</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
 				<SimpleValue>Zharmonizowany System/INTRASTAT</SimpleValue>
 			</Value>
 		</Row>
-		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Numer seryjny</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>NB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Numer partii</SimpleValue>
+			</Value>
+		</Row>
 		<Row>
 			<Annotation>
 				<Description xml:lang="en"/>
@@ -78,7 +131,17 @@
 				<SimpleValue>Produkt/numer identyfikacyjny PRODUKTÓW I usług/UNSPSC</SimpleValue>
 			</Value>
 		</Row>
-		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SSU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Klasyfikacja nadana przez dostawcę</SimpleValue>
+			</Value>
+		</Row>
 		<Row>
 			<Annotation>
 				<Description xml:lang="en"/>
@@ -90,7 +153,6 @@
 				<SimpleValue>Lista towarów niebezpiecznych ONZ</SimpleValue>
 			</Value>
 		</Row>
-		
 		<Row>
 			<Annotation>
 				<Description xml:lang="en"/>
@@ -102,7 +164,17 @@
 				<SimpleValue>CPV</SimpleValue>
 			</Value>
 		</Row>
-		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>STL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System klasyfikacji ATC</SimpleValue>
+			</Value>
+		</Row>
 		<Row>
 			<Annotation>
 				<Description xml:lang="en"/>
@@ -114,7 +186,6 @@
 				<SimpleValue>eCl@ss</SimpleValue>
 			</Value>
 		</Row>
-		
 		<Row>
 			<Annotation>
 				<Description xml:lang="en"/>
@@ -126,7 +197,28 @@
 				<SimpleValue>Nomenklatura Scalona UE</SimpleValue>
 			</Value>
 		</Row>
-		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>TSS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Kod grupy cenowej</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>TST</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>UNSPSC</SimpleValue>
+			</Value>
+		</Row>
 		<Row>
 			<Annotation>
 				<Description xml:lang="en"/>
