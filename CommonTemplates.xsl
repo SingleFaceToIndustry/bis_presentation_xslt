@@ -1475,7 +1475,7 @@
 <xsl:with-param name="BT-ID" select="'tir16-p056'"/>
 <xsl:with-param name="Colon-Suffix" select="'true'"/>
 </xsl:call-template>
-<xsl:apply-templates select="cac:ShimpentStage/cbc:TransportModeCode"/>
+<xsl:apply-templates select="cac:ShipmentStage/cbc:TransportModeCode"/>
 </xsl:if>
 <xsl:if test="cac:Delivery">
 <xsl:if test="cac:Delivery/cbc:TrackingID">
