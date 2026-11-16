@@ -401,9 +401,9 @@
         <xsl:for-each select="cac:Party/cac:PartyTaxScheme">
           <br/>
           <xsl:choose>
-            <xsl:when test="cac:TaxScheme/cbc:ID = 'GST'">
+            <xsl:when test="cac:TaxScheme/cbc:ID = 'VAT' or cac:TaxScheme/cbc:ID = 'GST'">
               <xsl:call-template name="LabelName">
-                <xsl:with-param name="BT-ID" select="'BT-31-GST'"/>
+                <xsl:with-param name="BT-ID" select="'BT-31'"/>
                 <xsl:with-param name="Colon-Suffix" select="'true'"/>
               </xsl:call-template>
               <xsl:apply-templates select="cbc:CompanyID"/>
@@ -669,7 +669,7 @@
         <xsl:if test="cac:Party/cac:PartyTaxScheme">
           <br/>
           <xsl:call-template name="LabelName">
-            <xsl:with-param name="BT-ID" select="'BT-48-GST'"/>
+            <xsl:with-param name="BT-ID" select="'BT-48'"/>
             <xsl:with-param name="Colon-Suffix" select="'true'"/>
           </xsl:call-template>
           <xsl:apply-templates select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID"/>
@@ -945,7 +945,7 @@
         <xsl:if test="cac:PayeeParty/cac:PartyTaxScheme">
           <br/>
           <xsl:call-template name="LabelName">
-            <xsl:with-param name="BT-ID" select="'BT-63-GST'"/>
+            <xsl:with-param name="BT-ID" select="'BT-63'"/>
             <xsl:with-param name="Colon-Suffix" select="'true'"/>
           </xsl:call-template>
           <xsl:apply-templates select="cac:PayeeParty/cac:PartyTaxScheme/cbc:CompanyID"/>
@@ -1164,7 +1164,7 @@
     <xsl:if test="cac:PartyTaxScheme/cbc:CompanyID !=''">
       <small>
         <xsl:call-template name="LabelName">
-          <xsl:with-param name="BT-ID" select="'BT-63-GST'"/>
+          <xsl:with-param name="BT-ID" select="'BT-63'"/>
           <xsl:with-param name="Colon-Suffix" select="'true'"/>
         </xsl:call-template>
         <xsl:value-of select="cac:PartyTaxScheme/cbc:CompanyID"/>
