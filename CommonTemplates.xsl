@@ -51,29 +51,40 @@
   <xsl:template match="/">
     <xsl:apply-templates/>
   </xsl:template>
+  <!-- Indexes for the lookups in LabelName and getGenericCode. Without them, every lookup scans the whole
+       Headlines or code list file, so rendering time grows with document lines × file size. -->
+  <xsl:key name="BusinessTerm" match="/SemanticModel/BusinessTerm" use="@id"/>
+  <xsl:key name="CodeListRow" match="/cdl:CodeList/cdl:SimpleCodeList/cdl:Row" use="cdl:Value[@ColumnRef='code']/cdl:SimpleValue"/>
   <!-- Return TermName or in case it exists the DisplayName -->
   <xsl:template name="LabelName">
     <xsl:param name="BT-ID"/>
     <!-- BT inparameter -->
     <xsl:param name="Colon-Suffix"/>
-    <xsl:choose>
-      <xsl:when test="$moduleDocBT/SemanticModel/BusinessTerm[@id=$BT-ID]/DisplayName">
-        <xsl:value-of select="$moduleDocBT/SemanticModel/BusinessTerm[@id=$BT-ID]/DisplayName"/>
-        <xsl:choose>
-          <xsl:when test="$Colon-Suffix ='true' and $moduleDocBT/SemanticModel/BusinessTerm[@id=$BT-ID]/DisplayName!=''">:&#160;</xsl:when>
-        </xsl:choose>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:choose>
-          <xsl:when test="$moduleDocBT/SemanticModel/BusinessTerm[@id=$BT-ID]/TermName">
-            <xsl:value-of select="$moduleDocBT/SemanticModel/BusinessTerm[@id=$BT-ID]/TermName"/>
-            <xsl:choose>
-              <xsl:when test="$Colon-Suffix ='true'">:&#160;</xsl:when>
-            </xsl:choose>
-          </xsl:when>
-        </xsl:choose>
-      </xsl:otherwise>
-    </xsl:choose>
+    <!-- A string, taken before xsl:for-each moves the context into the Headlines file, the document key()
+         searches. Inside such an xsl:for-each, the JDK's built-in XSLT processor (XSLTC) reads a node-set
+         parameter from the wrong document. -->
+    <xsl:variable name="id" select="string($BT-ID)"/>
+    <xsl:for-each select="$moduleDocBT">
+      <xsl:variable name="term" select="key('BusinessTerm', $id)"/>
+      <xsl:choose>
+        <xsl:when test="$term/DisplayName">
+          <xsl:value-of select="$term/DisplayName"/>
+          <xsl:choose>
+            <xsl:when test="$Colon-Suffix ='true' and $term/DisplayName!=''">:&#160;</xsl:when>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:choose>
+            <xsl:when test="$term/TermName">
+              <xsl:value-of select="$term/TermName"/>
+              <xsl:choose>
+                <xsl:when test="$Colon-Suffix ='true'">:&#160;</xsl:when>
+              </xsl:choose>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
   </xsl:template>
   <!--A function to display currencies with spaces as thousand delimiter-->
   <xsl:template name="Currency">
@@ -127,17 +138,30 @@
     <xsl:param name="documentName"/>
     <xsl:param name="documentName_en"/>
     <xsl:param name="documentCode"/>
+    <!-- A string, taken before xsl:for-each moves the context into the code list (see LabelName) -->
+    <xsl:variable name="code" select="string($documentCode)"/>
+    <!-- "+name" when the code list has the code (the name may be empty), "" when it has not -->
+    <xsl:variable name="name">
+      <xsl:for-each select="$documentName">
+        <xsl:for-each select="(key('CodeListRow', $code)/cdl:Value[@ColumnRef='name']/cdl:SimpleValue)[1]">+<xsl:value-of select="."/></xsl:for-each>
+      </xsl:for-each>
+    </xsl:variable>
     <xsl:choose>
-      <xsl:when test="$documentName/cdl:CodeList/cdl:SimpleCodeList/cdl:Row/cdl:Value/cdl:SimpleValue[../@ColumnRef='name' and ../../cdl:Value[@ColumnRef='code']/cdl:SimpleValue=$documentCode]">
-        <xsl:value-of select="$documentName/cdl:CodeList/cdl:SimpleCodeList/cdl:Row/cdl:Value/cdl:SimpleValue[../@ColumnRef='name' and ../../cdl:Value[@ColumnRef='code']/cdl:SimpleValue=$documentCode]"/>
+      <xsl:when test="starts-with($name, '+')">
+        <xsl:value-of select="substring($name, 2)"/>
       </xsl:when>
       <xsl:otherwise>
+        <xsl:variable name="name_en">
+          <xsl:for-each select="$documentName_en">
+            <xsl:for-each select="(key('CodeListRow', $code)/cdl:Value[@ColumnRef='name']/cdl:SimpleValue)[1]">+<xsl:value-of select="."/></xsl:for-each>
+          </xsl:for-each>
+        </xsl:variable>
         <xsl:choose>
-          <xsl:when test="$documentName_en/cdl:CodeList/cdl:SimpleCodeList/cdl:Row/cdl:Value/cdl:SimpleValue[../@ColumnRef='name' and ../../cdl:Value[@ColumnRef='code']/cdl:SimpleValue=$documentCode]">
-            <xsl:value-of select="$documentName_en/cdl:CodeList/cdl:SimpleCodeList/cdl:Row/cdl:Value/cdl:SimpleValue[../@ColumnRef='name' and ../../cdl:Value[@ColumnRef='code']/cdl:SimpleValue=$documentCode]"/>
+          <xsl:when test="starts-with($name_en, '+')">
+            <xsl:value-of select="substring($name_en, 2)"/>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="$documentCode"/>
+            <xsl:value-of select="$code"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>
